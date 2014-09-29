@@ -33,7 +33,7 @@ public class Game {
 	public void getInput() {
 		mouseX = Mouse.getX(); // will return the X coordinate on the Display.
 		mouseY = Mouse.getY(); // will return the Y coordinate on the Display.
-		if (frame % 30 == 0) {
+		if (frame % 45 == 0 && player1.life > 0) {
 			//atira
 			Tiro tiro = new Tiro(this);
 			objects.add(tiro);
@@ -47,21 +47,20 @@ public class Game {
 		Display.setTitle("lwjgl-Asteroide |  vidas: " + player1.life + " score: " + score + "    | Tomás");
 
 		//atira
-		if (frame % 120 == 0 && player1.life >= 0) {
+		if (frame % 120 == 0 && player1.life > 0) {
 			Ball asteroide = new Ball(player1);
 			objects.add(asteroide);
 		}
-		
+
 		frame++;
-		
+
 		//limpa a lista de objetos
 		// está parecendo que nao precisa
 //		for (GameObject g : objects) {
 //			g.update();
 //		}
-		
 		//reinicia contagem de frames
-		if (frame == (60 * 60 * 60 +1)) {
+		if (frame == (60 * 60 * 60 + 1)) {
 			frame = 1;
 		}
 	}

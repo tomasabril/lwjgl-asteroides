@@ -10,7 +10,7 @@ public class Player extends GameObject {
 
 	public static final int sizex = 40;
 	public static final int sizey = 40;
-	public int life = 10;
+	public int life = 3;
 
 	private float red;
 	private float green;
@@ -38,10 +38,10 @@ public class Player extends GameObject {
 
 	void hit() {
 		life--;
-		if (life <= 0) {
+		if (life == 1) {
 			red = 1f;
 		}
-		if (life < 0) {
+		if (life == 0) {
 			red = 1f;
 			green = 0f;
 		}

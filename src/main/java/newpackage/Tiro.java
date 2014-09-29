@@ -33,6 +33,13 @@ public class Tiro extends GameObject {
 	}
 
 	@Override
+	public void render() {
+		if (vivo) {
+			Draw.rect(x, y, sx, sy, 45f, 1f, 1f, 0f);
+		}
+	}
+
+	@Override
 	void update() {
 		if (vivo) {
 			x += velx;

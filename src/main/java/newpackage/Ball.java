@@ -45,7 +45,7 @@ public class Ball extends GameObject {
 
 	@Override
 	public void update() {
-		if (!player.vivo) {
+		if (player.life <= 0) {
 			this.vivo = false;
 		}
 		if (vivo) {
